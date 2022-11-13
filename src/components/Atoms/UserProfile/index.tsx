@@ -3,8 +3,8 @@ import { TUserProfileComponentProps } from "./types";
 
 const UserProfile: FC<TUserProfileComponentProps> = ({ user }) => {
   return (
-    <div className="flex flex-col gap-2 sm:w-auto w-full">
-      <div className="bg-gray-300 shadow-md gap-3 flex justify-start py-2 px-3 rounded-md items-start flex-col dark:bg-slate-800 sm:max-w-sm">
+    <div className="flex flex-col gap-2 md:w-auto w-full">
+      <div className="bg-white shadow-md gap-3 flex justify-start py-2 px-3 rounded-md items-start flex-col dark:bg-slate-800 md:max-w-sm">
         <div className="flex gap-4 items-center flex-wrap">
           <div className="flex relative w-16 h-w-16 justify-center items-center">
             <img
@@ -28,8 +28,8 @@ const UserProfile: FC<TUserProfileComponentProps> = ({ user }) => {
           </div>
         </div>
       </div>
-      <div className="none w-full">
-        <button className="w-full flex items-center bg-slate-800 shadow-md rounded-md py-2 px-3 gap-2 select-none cursor-pointer transition-all hover:bg-blue hover:text-black">
+      <div className="w-full md:max-w-sm">
+        <button className="w-full flex items-center bg-white dark:bg-slate-800 shadow-md rounded-md py-2 px-3 gap-2 select-none cursor-pointer transition-all hover:bg-blue hover:text-black">
           <i className="bx bx-exit"/>
           <span>Sair</span>
         </button>

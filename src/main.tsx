@@ -8,7 +8,7 @@ import "./global.css";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-      <div className="h-full w-full dark:bg-slate-900 dark:text-white bg-gray-200 text-black min-h-screen min-w-screen">
+      <div className="h-full w-full dark:bg-slate-900 dark:text-white bg-primary-white text-black min-h-screen min-w-screen">
         <AppRoutes />
       </div>
     </BrowserRouter>
