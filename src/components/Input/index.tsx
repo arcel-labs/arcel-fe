@@ -1,26 +1,25 @@
 import { InputHTMLAttributes, FC } from "react";
 
 export interface InputProps
-extends InputHTMLAttributes<HTMLInputElement> {
+  extends InputHTMLAttributes<HTMLInputElement> {
   placeholder?: string,
 }
 
 const Input: FC<InputProps> = ({
-    placeholder,
-    type,
-    onChange,
-    value
+  placeholder,
+  type,
+  onChange,
+  value
 }) => {
-    return (
+  return (
     <>
-        <input
-            className="rounded border border-indigo-600 focus:outline-none focus:ring  w-5/6
-            bg-transparent p-2"
-            type={type}
-            placeholder={placeholder}
-            onChange={onChange}
-            value={value}
-        />
+      <input
+        className="rounded border border-sky-600 focus:outline-none focus:ring w-full bg-transparent p-2"
+        type={type}
+        placeholder={placeholder}
+        onChange={onChange}
+        value={value}
+      />
 
     </>
   )
