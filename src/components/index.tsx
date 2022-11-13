@@ -1,3 +1,4 @@
-import Card from './Card'
+import Card from "./Card";
+import UserProfile from "./Atoms/UserProfile";
 
-export { Card };
+export { Card, UserProfile };

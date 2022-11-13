@@ -6,6 +6,9 @@ module.exports = {
       fontFamily: {
         sans: "Open Sans",
       },
+      colors: {
+        'blue': '#00a1ff',
+      },
     },
   },
   plugins: [],
