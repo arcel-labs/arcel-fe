@@ -12,7 +12,7 @@ const UserProfile: FC<TUserProfileComponentProps> = ({ user }) => {
               src={user.avatar}
               alt={`Foto de perfil de ${user.name}`}
             />
-            <div className="bg-green-500 rounded-full w-3 h-3 absolute bottom-0 right-0"></div>
+            <div className="bg-green-500 rounded-full w-3 h-3 absolute bottom-0 right-0 border border-white shadow-md"></div>
           </div>
           <h2 className="text-lg font-bold">{user.name}</h2>
         </div>
