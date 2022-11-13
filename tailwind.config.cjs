@@ -5,8 +5,12 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: "Open Sans",
-      }
-    }
+      },
+      colors: {
+        'blue': '#00a1ff',
+        'primary-white': '#f4f4f4'
+      },
+    },
   },
   plugins: [],
 };
