@@ -14,7 +14,7 @@ const Input: FC<InputProps> = ({
   return (
     <>
       <input
-        className="rounded border border-sky-600 focus:outline-none focus:ring w-full bg-transparent p-2"
+        className="rounded border border-sky-600 focus:outline-none focus:ring max-w-2xl bg-transparent p-2 italic"
         type={type}
         placeholder={placeholder}
         onChange={onChange}
