@@ -1,35 +1,31 @@
 import { memo } from "react";
-import { faker } from "@faker-js/faker";
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  PointElement,
-  LineElement,
+  BarElement,
   Title,
   Tooltip,
-  Filler,
   Legend,
 } from "chart.js";
-import { Line } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
+import { faker } from "@faker-js/faker";
 import { CHART_CONFIG } from "./config";
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
-  PointElement,
-  LineElement,
+  BarElement,
   Title,
   Tooltip,
-  Filler,
   Legend
 );
 
-const options = {
+export const options = {
   responsive: true,
   plugins: {
     legend: {
-      position: "bottom" as const,
+      position: "top" as const,
     },
     title: {
       display: true,
@@ -38,46 +34,26 @@ const options = {
   },
 };
 
-const labels = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "",
-];
+const labels = ["Q1", "Q2", "Q3"];
 
 export const data = {
   labels,
   datasets: [
     {
-      fill: true,
       label: "Matemática",
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 10 })),
-      borderColor: CHART_CONFIG.math.background,
-      backgroundColor: CHART_CONFIG.math.border,
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 14 })),
+      backgroundColor: CHART_CONFIG.math.background,
     },
     {
-      fill: true,
-      label: "Português",
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 10 })),
-      borderColor: CHART_CONFIG.portugues.border,
+      label: "Potuguês",
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 14 })),
       backgroundColor: CHART_CONFIG.portugues.background,
-    },
-    {
-      fill: true,
-      label: "Física",
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 10 })),
-      borderColor: CHART_CONFIG.physics.border,
-      backgroundColor: CHART_CONFIG.physics.background,
     },
   ],
 };
 
 const ChartsComponent = () => {
-  return <Line options={options} data={data} height={130} className="text-cyan-400" />;
-};
+  return <Bar options={options} data={data} />;
+}
 
-export default memo(ChartsComponent);
+export default ChartsComponent;

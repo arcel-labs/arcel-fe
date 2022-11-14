@@ -1,8 +1,10 @@
 export type TRecommendedContent = {
-	id_title: number,
-	title: string,
-	description: string,
-	subject: string,
+	id: string,
+	image_name: string,
+	image_link: string,
+	book_name: string,
+	Author: string,
+	Category: string,
 }
 
 export type TUserProfile = {
