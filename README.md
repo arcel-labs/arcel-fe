@@ -3,6 +3,16 @@ Projeto front-end para a plataforma de ensino Weduk.
 
 ![image.svg](./docs/prev.gif)
 
+## Como iniciar projeto
+
+Baixe as dependências
+
+`yarn`
+
+Rode o projeto
+
+`yarn dev`
+
 ### Contribuindo para o projeto
 
 > ```
