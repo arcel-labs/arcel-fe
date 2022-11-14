@@ -1,98 +1,83 @@
-import React from "react";
-import { AxisOptions, Chart } from "react-charts";
+import { memo } from "react";
+import { faker } from "@faker-js/faker";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Filler,
+  Legend,
+} from "chart.js";
+import { Line } from "react-chartjs-2";
+import { CHART_CONFIG } from "./config";
 
-type DailyStars = {
-  date: Date;
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Filler,
+  Legend
+);
 
-  stars: number;
+const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: "bottom" as const,
+    },
+    title: {
+      display: true,
+      text: "Desempenho escolar",
+    },
+  },
 };
 
-type Series = {
-  label: string;
-
-  data: DailyStars[];
-};
-
-const data: Series[] = [
-  {
-    label: "React Charts",
-    data: [
-      {
-        date: new Date(),
-        stars: 202123,
-      },
-      {
-        date: new Date(),
-        stars: 1233,
-      },
-      {
-        date: new Date(),
-        stars: 1111,
-      },
-      {
-        date: new Date(),
-        stars: 222,
-      },
-      {
-        date: new Date(),
-        stars: 666,
-      },
-      {
-        date: new Date(),
-        stars: 99,
-      },
-      {
-        date: new Date(),
-        stars: 202123,
-      },
-      {
-        date: new Date(),
-        stars: 202123,
-      },
-
-      // ...
-    ],
-  },
-
-  {
-    label: "React Query",
-    data: [
-      {
-        date: new Date(),
-        stars: 10234230,
-      },
-      // ...
-    ],
-  },
+const labels = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "",
 ];
 
-const Charts = () => {
-  const primaryAxis = React.useMemo(
-    (): AxisOptions<DailyStars> => ({
-      getValue: (datum) => datum.date,
-    }),
-    []
-  );
-
-  const secondaryAxes = React.useMemo(
-    (): AxisOptions<DailyStars>[] => [
-      {
-        getValue: (datum) => datum.stars,
-      },
-    ],
-    []
-  );
-
-  return (
-    <Chart
-      options={{
-        data,
-        primaryAxis,
-        secondaryAxes,
-        dark: true,
-      }}
-    />
-  );
+export const data = {
+  labels,
+  datasets: [
+    {
+      fill: true,
+      label: "Matemática",
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 10 })),
+      borderColor: CHART_CONFIG.math.background,
+      backgroundColor: CHART_CONFIG.math.border,
+    },
+    {
+      fill: true,
+      label: "Português",
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 10 })),
+      borderColor: CHART_CONFIG.portugues.border,
+      backgroundColor: CHART_CONFIG.portugues.background,
+    },
+    {
+      fill: true,
+      label: "Física",
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 10 })),
+      borderColor: CHART_CONFIG.physics.border,
+      backgroundColor: CHART_CONFIG.physics.background,
+    },
+  ],
 };
 
-export default Charts;
+const ChartsComponent = () => {
+  return <Line options={options} data={data} height={130} className="text-cyan-400" />;
+};
+
+export default memo(ChartsComponent);
