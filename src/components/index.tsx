@@ -4,4 +4,6 @@ import Input from './Input';
 import UserProfile from './Atoms/UserProfile';
 import Loader from './Loader';
 
-export { Button, Card, Input, UserProfile, Loader };
+export { Button, Input, UserProfile, Loader };
+
+export default Card
