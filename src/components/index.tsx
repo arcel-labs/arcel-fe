@@ -1,9 +1,8 @@
 import Button from './Button';
 import Card from './Card';
+import ChartsComponent from './Atoms/Charts';
 import Input from './Input';
-import UserProfile from './Atoms/UserProfile';
 import Loader from './Loader';
+import UserProfile from './Atoms/UserProfile';
 
-export { Button, Input, UserProfile, Loader };
-
-export default Card
+export { Button, Card, Input, UserProfile, Loader, ChartsComponent };
