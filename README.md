@@ -1,3 +1,8 @@
+# Weduk Front-end
+Projeto front-end para a plataforma de ensino Weduk.
+
+![image.svg](./docs/prev.gif)
+
 ### Contribuindo para o projeto
 
 > ```
